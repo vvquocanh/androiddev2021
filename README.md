@@ -10,7 +10,7 @@ Students are expected to:
 Student Info
 =======================
 
-* Name: Vũ Vương Quốc Anh*
-* ID: BI9-046*
-* Group ID: 8*
+* Name: Vũ Vương Quốc Anh
+* ID: BI9-046
+* Group ID: 8
 
