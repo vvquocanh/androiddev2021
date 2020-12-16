@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">USTH Weather</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="monday">Thứ 2</string>
+    <string name="tuesday">Thứ 3</string>
+    <string name="wednesday">Thứ 4</string>
+    <string name="thursday">Thứ 5</string>
+    <string name="friday">Thứ 6</string>
+    <string name="saturday">Thứ 7</string>
+    <string name="sunday">Chủ Nhật</string>
+
+    <string name="cloudy">Nhiều mây</string>
+    <string name="snowy">Có tuyết</string>
+    <string name="rainy">Có mưa</string>
+    <string name="bolt">Có chớp</string>
+    <string name="sunny">Nhiều nắng</string>
+    <string name="storm">Có bão</string>
+    <string name="tornado">Có lốc</string>
+    <string name="flood">Lũ lụt</string>
+
+    <string name="paris">Paris</string>
+</resources>

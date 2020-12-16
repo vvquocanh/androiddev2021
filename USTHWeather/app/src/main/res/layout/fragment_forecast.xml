@@ -5,20 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="30dp"
     android:background="@color/white"
     tools:context=".Fragments.ForecastFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/forecast_row_height"
         android:orientation="horizontal">
         <TextView
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Mon"
-            android:textSize="20sp"
+            android:text="@string/monday"
+            android:textSize="@dimen/forecast_week_text"
             android:gravity="center"
             >
         </TextView>
@@ -27,31 +26,44 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="5dp"
+            android:padding="@dimen/forecast_image_padding"
             android:src="@drawable/cloudy_day">
         </ImageView>
 
-        <TextView
+        <LinearLayout
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="Cloudy\n24C-31C"
-            android:paddingLeft="10dp"
-            android:textSize="15sp"
-            android:gravity="center_vertical">
-        </TextView>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cloudy"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="24C-31C"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/forecast_row_height"
         android:orientation="horizontal">
         <TextView
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Tue"
-            android:textSize="20sp"
+            android:text="@string/tuesday"
+            android:textSize="@dimen/forecast_week_text"
             android:gravity="center"
             >
         </TextView>
@@ -60,31 +72,44 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="5dp"
+            android:padding="@dimen/forecast_image_padding"
             android:src="@drawable/snow">
         </ImageView>
 
-        <TextView
+        <LinearLayout
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="Snowy\n0C-2C"
-            android:paddingLeft="10dp"
-            android:textSize="15sp"
-            android:gravity="center_vertical">
-        </TextView>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/snowy"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0C-2C"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/forecast_row_height"
         android:orientation="horizontal">
         <TextView
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Wed"
-            android:textSize="20sp"
+            android:text="@string/wednesday"
+            android:textSize="@dimen/forecast_week_text"
             android:gravity="center"
             >
         </TextView>
@@ -93,31 +118,44 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="5dp"
+            android:padding="@dimen/forecast_image_padding"
             android:src="@drawable/rain">
         </ImageView>
 
-        <TextView
+        <LinearLayout
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="Rainy\n18C-23C"
-            android:paddingLeft="10dp"
-            android:textSize="15sp"
-            android:gravity="center_vertical">
-        </TextView>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rainy"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18C-23C"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/forecast_row_height"
         android:orientation="horizontal">
         <TextView
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Thu"
-            android:textSize="20sp"
+            android:text="@string/thursday"
+            android:textSize="@dimen/forecast_week_text"
             android:gravity="center"
             >
         </TextView>
@@ -126,31 +164,44 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="5dp"
+            android:padding="@dimen/forecast_image_padding"
             android:src="@drawable/bolt">
         </ImageView>
 
-        <TextView
+        <LinearLayout
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="Bolt\n22C-26C"
-            android:paddingLeft="10dp"
-            android:textSize="15sp"
-            android:gravity="center_vertical">
-        </TextView>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cloudy"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="22C-26C"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/forecast_row_height"
         android:orientation="horizontal">
         <TextView
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Fri"
-            android:textSize="20sp"
+            android:text="@string/friday"
+            android:textSize="@dimen/forecast_week_text"
             android:gravity="center"
             >
         </TextView>
@@ -159,31 +210,44 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="5dp"
+            android:padding="@dimen/forecast_image_padding"
             android:src="@drawable/sun">
         </ImageView>
 
-        <TextView
+        <LinearLayout
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="Sunny\n30C-35C"
-            android:paddingLeft="10dp"
-            android:textSize="15sp"
-            android:gravity="center_vertical">
-        </TextView>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sunny"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30C-35C"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/forecast_row_height"
         android:orientation="horizontal">
         <TextView
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Sat"
-            android:textSize="20sp"
+            android:text="@string/saturday"
+            android:textSize="@dimen/forecast_week_text"
             android:gravity="center"
             >
         </TextView>
@@ -192,31 +256,44 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="5dp"
+            android:padding="@dimen/forecast_image_padding"
             android:src="@drawable/cloudy_day">
         </ImageView>
 
-        <TextView
+        <LinearLayout
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="Cloudy\n23C-28C"
-            android:paddingLeft="10dp"
-            android:textSize="15sp"
-            android:gravity="center_vertical">
-        </TextView>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cloudy"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="23C-28CC"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/forecast_row_height"
         android:orientation="horizontal">
         <TextView
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Sun"
-            android:textSize="20sp"
+            android:text="@string/sunday"
+            android:textSize="@dimen/forecast_week_text"
             android:gravity="center"
             >
         </TextView>
@@ -225,31 +302,44 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="5dp"
+            android:padding="@dimen/forecast_image_padding"
             android:src="@drawable/storm">
         </ImageView>
 
-        <TextView
+        <LinearLayout
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="Storm\n14C-21C"
-            android:paddingLeft="10dp"
-            android:textSize="15sp"
-            android:gravity="center_vertical">
-        </TextView>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/storm"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="14C-21C"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/forecast_row_height"
         android:orientation="horizontal">
         <TextView
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Mon"
-            android:textSize="20sp"
+            android:text="@string/monday"
+            android:textSize="@dimen/forecast_week_text"
             android:gravity="center"
             >
         </TextView>
@@ -258,31 +348,44 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="5dp"
+            android:padding="@dimen/forecast_image_padding"
             android:src="@drawable/tornado">
         </ImageView>
 
-        <TextView
+        <LinearLayout
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="Tornado\n15C-23C"
-            android:paddingLeft="10dp"
-            android:textSize="15sp"
-            android:gravity="center_vertical">
-        </TextView>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tornado"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15C-23C"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/forecast_row_height"
         android:orientation="horizontal">
         <TextView
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Tue"
-            android:textSize="20sp"
+            android:text="@string/tuesday"
+            android:textSize="@dimen/forecast_week_text"
             android:gravity="center"
             >
         </TextView>
@@ -291,31 +394,44 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="5dp"
+            android:padding="@dimen/forecast_image_padding"
             android:src="@drawable/flood">
         </ImageView>
 
-        <TextView
+        <LinearLayout
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="Flood\n28C-33C"
-            android:paddingLeft="10dp"
-            android:textSize="15sp"
-            android:gravity="center_vertical">
-        </TextView>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/flood"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="28C-33C"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/forecast_row_height"
         android:orientation="horizontal">
         <TextView
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Wed"
-            android:textSize="20sp"
+            android:text="@string/wednesday"
+            android:textSize="@dimen/forecast_week_text"
             android:gravity="center"
             >
         </TextView>
@@ -324,31 +440,44 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="5dp"
+            android:padding="@dimen/forecast_image_padding"
             android:src="@drawable/sun">
         </ImageView>
 
-        <TextView
+        <LinearLayout
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="Sunny\n30C-34C"
-            android:paddingLeft="10dp"
-            android:textSize="15sp"
-            android:gravity="center_vertical">
-        </TextView>
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cloudy"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="30C-34C"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="@dimen/forecast_row_height"
         android:orientation="horizontal">
         <TextView
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:text="Thu"
-            android:textSize="20sp"
+            android:text="@string/thursday"
+            android:textSize="@dimen/forecast_week_text"
             android:gravity="center"
             >
         </TextView>
@@ -357,84 +486,31 @@
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:padding="5dp"
+            android:padding="@dimen/forecast_image_padding"
             android:src="@drawable/rain">
         </ImageView>
 
-        <TextView
+        <LinearLayout
             android:layout_width="0px"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:text="Rainy\n12C-7C"
-            android:paddingLeft="10dp"
-            android:textSize="15sp"
-            android:gravity="center_vertical">
-        </TextView>
-    </LinearLayout>
+            android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Sat"
-            android:textSize="20sp"
-            android:gravity="center"
-            >
-        </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/rainy"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
 
-        <ImageView
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:src="@drawable/storm">
-        </ImageView>
-
-        <TextView
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:text="Storm\n11C-14C"
-            android:paddingLeft="10dp"
-            android:textSize="15sp"
-            android:gravity="center_vertical">
-        </TextView>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="Sun"
-            android:textSize="20sp"
-            android:gravity="center"
-            >
-        </TextView>
-
-        <ImageView
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:padding="5dp"
-            android:src="@drawable/meteor_rain">
-        </ImageView>
-
-        <TextView
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="3"
-            android:text="Meteor\n19C-22C"
-            android:paddingLeft="10dp"
-            android:textSize="15sp"
-            android:gravity="center_vertical">
-        </TextView>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7C-12C"
+                android:paddingLeft="@dimen/forecast_weather_text_padding"
+                android:textSize="@dimen/forecast_weather_text">
+            </TextView>
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>
