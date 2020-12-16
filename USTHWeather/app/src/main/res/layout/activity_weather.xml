@@ -8,26 +8,10 @@
     android:layout_margin="20dp"
     tools:context=".Activities.WeatherActivity">
 
-    <LinearLayout
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <fragment
-            android:id="@+id/weather_fragment"
-            android:name="vn.edu.usth.weather.Fragments.WeatherFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-        </fragment>
-
-        <fragment
-            android:id="@+id/forecast_fragment"
-            android:name="vn.edu.usth.weather.Fragments.ForecastFragment"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-        </fragment>
-    </LinearLayout>
-
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+    </androidx.viewpager.widget.ViewPager>
 </androidx.constraintlayout.widget.ConstraintLayout>
