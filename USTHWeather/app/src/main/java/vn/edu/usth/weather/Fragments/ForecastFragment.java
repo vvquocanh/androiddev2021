@@ -22,7 +22,7 @@ public class ForecastFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view = new View(getContext());
+        /*View view = new View(getContext());
         view.setBackgroundColor(Color.parseColor("#20FF0000"));
 
         TextView textView = new TextView(getContext());
@@ -34,7 +34,7 @@ public class ForecastFragment extends Fragment {
         LinearLayout layout = new LinearLayout(getContext());
         layout.setOrientation(LinearLayout.VERTICAL);
         layout.addView(textView);
-        layout.addView(imageView);
+        layout.addView(imageView);*/
         return inflater.inflate(R.layout.fragment_forecast, container, false);
     }
 }
