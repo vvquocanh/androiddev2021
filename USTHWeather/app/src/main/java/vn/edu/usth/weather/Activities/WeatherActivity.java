@@ -7,6 +7,8 @@ import androidx.viewpager.widget.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.android.material.tabs.TabLayout;
+
 import vn.edu.usth.weather.Adapter.HomeFragmentPagerAdapter;
 import vn.edu.usth.weather.Fragments.ForecastFragment;
 import vn.edu.usth.weather.R;
@@ -26,6 +28,9 @@ public class WeatherActivity extends AppCompatActivity {
         pager.setOffscreenPageLimit(3);
         pager.setAdapter(adapter);
         Log.i(TAG, "Created");
+
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab);
+        tabLayout.setupWithViewPager(pager);
     }
 
     @Override
