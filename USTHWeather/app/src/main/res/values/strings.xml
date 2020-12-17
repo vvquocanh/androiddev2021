@@ -19,4 +19,6 @@
     <string name="flood">Flood</string>
 
     <string name="paris">Paris</string>
+    <string name="setting">Settings</string>
+    <string name="refresh">Refresh</string>
 </resources>
