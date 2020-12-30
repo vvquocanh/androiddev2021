@@ -1,20 +1,26 @@
 package vn.edu.usth.weather.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.loader.content.AsyncTaskLoader;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import android.os.SystemClock;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
+
+import java.net.URL;
 
 import vn.edu.usth.weather.Adapter.HomeFragmentPagerAdapter;
 import vn.edu.usth.weather.Fragments.ForecastFragment;
@@ -80,16 +86,9 @@ public class WeatherActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.refresh: {
-                final Handler handler = new Handler(Looper.getMainLooper()) {
-                    public void handleMessage(Message msg) {
-                        String content = msg.getData().getString("server_respond");
-                        Toast.makeText(getApplicationContext(), content, Toast.LENGTH_SHORT).show();
-                    }
-                };
-
-                Thread t = new Thread(new Runnable() {
+                AsyncTask<URL, Integer, Message> task = new AsyncTask<URL, Integer, Message>() {
                     @Override
-                    public void run() {
+                    protected Message doInBackground(URL... url) {
                         try {
                             Thread.sleep(2000);
                         } catch (InterruptedException e) {
@@ -101,11 +100,17 @@ public class WeatherActivity extends AppCompatActivity {
 
                         Message msg = new Message();
                         msg.setData(bundle);
-                        handler.sendMessage(msg);
+                        return msg;
                     }
-                });
 
-                t.start();
+                    @Override
+                    protected void onPostExecute(Message msg) {
+                        String content = msg.getData().getString("server_respond");
+                        Toast.makeText(getApplicationContext(), content, Toast.LENGTH_SHORT).show();
+                    }
+
+                };
+                task.execute();
                 return true;
             }
             case R.id.start_prefActivity: {
