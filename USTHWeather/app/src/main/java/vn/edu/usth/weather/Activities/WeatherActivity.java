@@ -6,9 +6,13 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -76,7 +80,32 @@ public class WeatherActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.refresh: {
-                recreate();
+                final Handler handler = new Handler(Looper.getMainLooper()) {
+                    public void handleMessage(Message msg) {
+                        String content = msg.getData().getString("server_respond");
+                        Toast.makeText(getApplicationContext(), content, Toast.LENGTH_SHORT).show();
+                    }
+                };
+
+                Thread t = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            Thread.sleep(2000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+
+                        Bundle bundle = new Bundle();
+                        bundle.putString("server_respond", "json file");
+
+                        Message msg = new Message();
+                        msg.setData(bundle);
+                        handler.sendMessage(msg);
+                    }
+                });
+
+                t.start();
                 return true;
             }
             case R.id.start_prefActivity: {
