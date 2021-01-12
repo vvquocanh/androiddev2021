@@ -20,6 +20,10 @@ import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.ImageRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.tabs.TabLayout;
 
 import java.io.IOException;
@@ -95,7 +99,24 @@ public class WeatherActivity extends AppCompatActivity {
                 AsyncTask<URL, Integer, Bitmap> task = new AsyncTask<URL, Integer, Bitmap>() {
                     @Override
                     protected Bitmap doInBackground(URL... url) {
-                        Bitmap bitmap = null;
+                        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+
+                        Response.Listener<Bitmap> listener = new Response.Listener<Bitmap>() {
+                            @Override
+                            public void onResponse(Bitmap response) {
+                                ImageView iv = (ImageView) findViewById(R.id.weather_image);
+                                iv.setImageBitmap(response);
+                            }
+                        };
+
+                        ImageRequest imageRequest = new ImageRequest(
+                               "https://usth.edu.vn/uploads/logo_moi-eng.png",
+                                listener, 0, 0, ImageView.ScaleType.CENTER,
+                                Bitmap.Config.ARGB_8888,null);
+
+                        queue.add(imageRequest);
+
+                       /* Bitmap bitmap = null;
                         try {
                             URL usthURL = new URL("https://usth.edu.vn/uploads/logo_moi-eng.png");
                             HttpURLConnection connection = (HttpURLConnection) usthURL.openConnection();
@@ -112,7 +133,8 @@ public class WeatherActivity extends AppCompatActivity {
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
-                        return bitmap;
+                        return bitmap;*/
+                        return null;
                     }
 
                     @Override
