@@ -92,34 +92,31 @@ public class WeatherActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.refresh: {
-                AsyncTask<URL, Integer, InputStream> task = new AsyncTask<URL, Integer, InputStream>() {
+                AsyncTask<URL, Integer, Bitmap> task = new AsyncTask<URL, Integer, Bitmap>() {
                     @Override
-                    protected InputStream doInBackground(URL... url) {
-                        InputStream inputStream = null;
+                    protected Bitmap doInBackground(URL... url) {
+                        Bitmap bitmap = null;
                         try {
                             URL usthURL = new URL("https://usth.edu.vn/uploads/logo_moi-eng.png");
                             HttpURLConnection connection = (HttpURLConnection) usthURL.openConnection();
                             connection.setRequestMethod("GET");
                             connection.setDoInput(true);
-                            Log.i(TAG, "before connect");
                             connection.connect();
-                            Log.i(TAG, "connected");
 
                             int response = connection.getResponseCode();
                             Log.i("USTHWeather","The response is: " + response);
-                            inputStream = connection.getInputStream();
+                            InputStream inputStream = connection.getInputStream();
 
+                            bitmap = BitmapFactory.decodeStream(inputStream);
                             connection.disconnect();
                         } catch (Exception e) {
                             e.printStackTrace();
-                            Log.i(TAG, e.toString());
                         }
-                        return inputStream;
+                        return bitmap;
                     }
 
                     @Override
-                    protected void onPostExecute(InputStream inputStream) {
-                        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                    protected void onPostExecute(Bitmap bitmap) {
                         ImageView logo = (ImageView) findViewById(R.id.weather_image);
                         logo.setImageBitmap(bitmap);
                     }
