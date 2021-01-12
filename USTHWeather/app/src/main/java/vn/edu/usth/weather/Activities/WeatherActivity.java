@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -16,10 +17,15 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.material.tabs.TabLayout;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 
 import vn.edu.usth.weather.Adapter.HomeFragmentPagerAdapter;
@@ -86,27 +92,36 @@ public class WeatherActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.refresh: {
-                AsyncTask<URL, Integer, Message> task = new AsyncTask<URL, Integer, Message>() {
+                AsyncTask<URL, Integer, InputStream> task = new AsyncTask<URL, Integer, InputStream>() {
                     @Override
-                    protected Message doInBackground(URL... url) {
+                    protected InputStream doInBackground(URL... url) {
+                        InputStream inputStream = null;
                         try {
-                            Thread.sleep(2000);
-                        } catch (InterruptedException e) {
+                            URL usthURL = new URL("https://usth.edu.vn/uploads/logo_moi-eng.png");
+                            HttpURLConnection connection = (HttpURLConnection) usthURL.openConnection();
+                            connection.setRequestMethod("GET");
+                            connection.setDoInput(true);
+                            Log.i(TAG, "before connect");
+                            connection.connect();
+                            Log.i(TAG, "connected");
+
+                            int response = connection.getResponseCode();
+                            Log.i("USTHWeather","The response is: " + response);
+                            inputStream = connection.getInputStream();
+
+                            connection.disconnect();
+                        } catch (Exception e) {
                             e.printStackTrace();
+                            Log.i(TAG, e.toString());
                         }
-
-                        Bundle bundle = new Bundle();
-                        bundle.putString("server_respond", "json file");
-
-                        Message msg = new Message();
-                        msg.setData(bundle);
-                        return msg;
+                        return inputStream;
                     }
 
                     @Override
-                    protected void onPostExecute(Message msg) {
-                        String content = msg.getData().getString("server_respond");
-                        Toast.makeText(getApplicationContext(), content, Toast.LENGTH_SHORT).show();
+                    protected void onPostExecute(InputStream inputStream) {
+                        Bitmap bitmap = BitmapFactory.decodeStream(inputStream);
+                        ImageView logo = (ImageView) findViewById(R.id.weather_image);
+                        logo.setImageBitmap(bitmap);
                     }
 
                 };

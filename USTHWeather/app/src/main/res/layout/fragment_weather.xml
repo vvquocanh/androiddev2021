@@ -44,6 +44,7 @@
     </TextView>
     
     <ImageView
+        android:id="@+id/weather_image"
         android:layout_width="@dimen/weather_image_width"
         android:layout_height="@dimen/weather_image_height"
         android:src="@drawable/sun"
